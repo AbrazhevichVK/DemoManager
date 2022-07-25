@@ -1,0 +1,38 @@
+﻿@model DemosnapManager.Models.Snapshot.DemoSnapshotModel
+ 
+@{
+    ViewData["Title"] = "Новый демоснимок";
+}
+<h2>@ViewData["Title"]</h2>
+ 
+<form asp-action="Create" asp-controller="Home">
+    <div>
+        <div class="form-group">
+            <label asp-for="Satellite"></label>
+            <input type="text" asp-for="Satellite" class="form-control form-control-sm" />
+        </div>
+        <div class="form-group">
+            <label asp-for="ShootingDate"></label>
+            <input asp-for="ShootingDate" class="form-control  form-control-sm" />
+        </div>
+         <div class="form-group">
+            <label asp-for="Cloudiness"></label>
+            <input asp-for="Cloudiness" class="form-control  form-control-sm" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Coil"></label>
+            <input asp-for="Coil" class="form-control  form-control-sm" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Coordinates"></label>
+            <input asp-for="Coordinates" class="form-control  form-control-sm" />
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Сохранить" class="btn btn-outline-secondary" />
+        </div>
+    </div>
+</form>
+ 
+<div>
+    <a asp-controller="Home" asp-action="Index">Вернуться к списку</a>
+</div>

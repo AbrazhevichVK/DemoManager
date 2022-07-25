@@ -1,0 +1,33 @@
+﻿@model IEnumerable<DemosnapManager.Models.Snapshot.DemoSnapshotModel>
+@{
+    ViewData["Title"] = "Список демоснимков";
+}
+<h2>@ViewData["Title"]</h2>
+<p>
+    <a asp-controller="Home" asp-action="Create">Добавить</a>
+</p>
+<table class="table">
+    <tr>
+        <th>Спутник</th>
+        <th>Дата съемки</th>
+        <th>Облачность</th>
+        <th>Виток</th>
+        <th>Координаты</th>
+        <th></th>
+    </tr>
+ 
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Satellite</td>
+            <td> @item.ShootingDate </td>
+            <td> @item.Cloudiness </td>
+            <td> @item.Coil </td>
+            <td> @item.Coordinates </td>
+            <td>
+                <a asp-controller="Home" asp-action="Edit" asp-route-id="@item.Id">Изменить</a> |
+                <a asp-controller="Home" asp-action="Delete" asp-route-id="@item.Id">Удалить</a>
+            </td>
+        </tr>
+    }
+</table>

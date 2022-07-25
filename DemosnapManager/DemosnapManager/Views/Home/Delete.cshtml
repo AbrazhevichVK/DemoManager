@@ -1,0 +1,41 @@
+﻿@model DemosnapManager.Models.Snapshot.DemoSnapshotModel
+@{
+    ViewData["Title"] = "Удаление демоснимокa";
+}
+<h2>@ViewBag.Title</h2>
+<div>
+    <dl class="dl-horizontal">
+        <dt>Спутник</dt>
+        <dd>
+            @Model.Satellite
+        </dd>
+ 
+        <dt>Дата съемки</dt>
+        <dd>
+            @Model.ShootingDate
+        </dd>
+
+        <dt>Облачность</dt>
+        <dd>
+            @Model.Cloudiness
+        </dd>
+
+        <dt>Виток</dt>
+        <dd>
+            @Model.Coil
+        </dd>
+
+        <dt>Координаты</dt>
+        <dd>
+            @Model.Coordinates
+        </dd>
+    </dl>
+ 
+    <div>
+        <form asp-controller="Home" asp-action="Delete" method="post">
+            <div class="form-group">
+                <input type="submit" class="btn btn-default" value="Удалить" />
+            </div>
+        </form>
+    </div>
+</div>
